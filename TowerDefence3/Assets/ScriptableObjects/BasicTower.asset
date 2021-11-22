@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BasicTower
   m_EditorClassIdentifier: 
   towerName: BasicTower
+  towerPrefab: {fileID: 5763094340589309002, guid: bf65367d46d84844b969d445295008c4, type: 3}
   damage: 1
   fireRate: 0.5
   reloadSpeed: 0.5

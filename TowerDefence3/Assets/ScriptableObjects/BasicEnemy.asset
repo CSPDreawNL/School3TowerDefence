@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BasicEnemy
   m_EditorClassIdentifier: 
   enemyName: BasicEnemy
+  enemyPrefab: {fileID: 0}
   maxHealth: 1
   movementSpeed: 1
   coins: 10
