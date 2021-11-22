@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerBuilder : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public class TowerBuilder : MonoBehaviour {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    [SerializeField] private Vector3 m_MouseInWorldPosition;
+    [SerializeField] private SOTower m_CurrentTower;
+
+
+    void Update() {
+        m_MouseInWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        if (Input.GetKeyDown(KeyCode.Mouse0)) {
+            Instantiate(m_CurrentTower.towerPrefab, m_MouseInWorldPosition, Quaternion.identity);
+        }
     }
 }
