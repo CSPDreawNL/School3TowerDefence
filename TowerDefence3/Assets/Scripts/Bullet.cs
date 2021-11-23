@@ -25,7 +25,7 @@ namespace TD3.Core
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Enemy"))
+            if (other.GetComponent<Health>())
             {
                 Health _enemyHealth = other.GetComponent<Health>();
                 if (_enemyHealth)

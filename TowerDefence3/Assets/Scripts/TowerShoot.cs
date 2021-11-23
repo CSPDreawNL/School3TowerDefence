@@ -47,6 +47,7 @@ namespace TD3.Core
                 while (target == true && timeSinceLastAttack >= timeBetweenAttacks)
                 {
                     Instantiate(projectile, transform.position, transform.rotation);
+                    projectile.GetComponent<Bullet>().Target = target.transform;
                     timeSinceLastAttack = 0f;
                     yield return new WaitForSeconds(1);
                 }
