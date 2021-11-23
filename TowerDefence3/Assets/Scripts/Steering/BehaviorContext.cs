@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Steering
 {
-    public class BehaviorContext : MonoBehaviour
+    public class BehaviorContext
     {
         public Vector3 position;
         public Vector3 velocity;
