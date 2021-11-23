@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Steering Settings
   m_EditorClassIdentifier: 
   m_mass: 70
-  m_maxDesiredVelocity: 3
-  m_maxSteeringForce: 3
+  m_maxDesiredVelocity: 30
+  m_maxSteeringForce: 30
   m_maxSpeed: 3
-  LoopPath: 1
+  LoopPath: 0
   m_followPathMode: 0
-  loopPath: 1
+  loopPath: 0
   m_followPathTag: 
-  m_followPathRadius: 2.5
+  m_followPathRadius: 2
   m_arriveDistance: 1
