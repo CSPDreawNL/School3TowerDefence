@@ -23,7 +23,9 @@ namespace Steering
 
         public virtual void OnDrawGizmos(BehaviorContext context)
         {
+#if UNITY_EDITOR
             Support.DrawRay(m_positionTarget, m_velocityDesired, Color.yellow);
+#endif
         }
     }
 }
