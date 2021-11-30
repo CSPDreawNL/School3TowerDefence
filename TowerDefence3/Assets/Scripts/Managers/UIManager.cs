@@ -13,12 +13,23 @@ public class UIManager : MonoBehaviour
             Destroy(this);
     }
 
+    [SerializeField] private KeyCode m_PauseKey = KeyCode.Escape;
     [SerializeField] private GameObject m_GameOverPanel;
     [SerializeField] private GameObject m_YouWonPanel;
+    [SerializeField] private GameObject m_PausePanel;
+
+    private bool isGamePaused = false;
 
     private void Start() {
         m_GameOverPanel.SetActive(false);
         m_YouWonPanel.SetActive(false);
+        m_PausePanel.SetActive(false);
+    }
+
+    private void Update() {
+        if (Input.GetKeyDown(m_PauseKey)) {
+            PauseGame();
+        }
     }
 
     public void GameOver() {
@@ -29,5 +40,19 @@ public class UIManager : MonoBehaviour
     public void YouWon() {
         m_YouWonPanel.SetActive(true);
         Time.timeScale = 0f;
+    }
+
+    public void PauseGame() {
+        if (!isGamePaused) {
+            m_PausePanel.SetActive(true);
+            isGamePaused = true;
+            Time.timeScale = 0f;
+        }
+        else if (isGamePaused) {
+            m_PausePanel.SetActive(false);
+            isGamePaused = false;
+            Time.timeScale = 1f;
+        }
+
     }
 }
