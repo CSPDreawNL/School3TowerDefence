@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 230090780066866789}
   - component: {fileID: 3791654634996984256}
   - component: {fileID: 1403538158261738762}
+  - component: {fileID: -5092451900139655121}
   m_Layer: 0
   m_Name: Farmhouse
-  m_TagString: Untagged
+  m_TagString: Unplacable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-5092451900139655121
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610979872366017759}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8211372540250625004, guid: 973c3b0d4c302844390ae74aa33354aa, type: 3}

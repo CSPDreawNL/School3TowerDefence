@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 5605260384927074594}
   - component: {fileID: 8819799635417286279}
   - component: {fileID: 6738174783570719309}
+  - component: {fileID: 1279061162500128377}
   m_Layer: 0
   m_Name: WheatTower
-  m_TagString: Untagged
+  m_TagString: Unplacable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1279061162500128377
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5080678528003183512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 450443091681560433, guid: c2a272ae254881c4fa4ee5426151c868, type: 3}

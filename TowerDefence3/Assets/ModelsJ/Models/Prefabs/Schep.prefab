@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 8734364981486729044}
   - component: {fileID: 5663673703321286897}
   - component: {fileID: 7601405950485810235}
+  - component: {fileID: 1329433637335512575}
   m_Layer: 0
   m_Name: Schep
-  m_TagString: Untagged
+  m_TagString: Unplacable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,3 +85,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1329433637335512575
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8249857844930735598}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -981004378944408349, guid: c5de633df5969d548b20f3af4000364d, type: 3}
