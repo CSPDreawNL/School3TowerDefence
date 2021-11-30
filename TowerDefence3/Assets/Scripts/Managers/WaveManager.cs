@@ -19,10 +19,10 @@ public class WaveManager : MonoBehaviour {
     [SerializeField] private int[] m_Waves;
     [SerializeField] private int m_SpawnInterval = 1;
     [SerializeField] private int m_WaveInterval = 5;
-    [SerializeField] private int waveCounter = 0;
-    [SerializeField] private int enemyCounter = 0;
 
     private Coroutine waveSpawner;
+    private int waveCounter = 0;
+    private int enemyCounter = 0;
 
     private void Start() {
         waveSpawner = StartCoroutine(WaveSpawner());

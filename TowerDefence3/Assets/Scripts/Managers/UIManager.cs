@@ -18,12 +18,17 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject m_YouWonPanel;
     [SerializeField] private GameObject m_PausePanel;
 
+    [SerializeField] private TMPro.TextMeshProUGUI m_HealthTMP;
+    [SerializeField] private TMPro.TextMeshProUGUI m_CoinsTMP;
+
     private bool isGamePaused = false;
 
     private void Start() {
         m_GameOverPanel.SetActive(false);
         m_YouWonPanel.SetActive(false);
         m_PausePanel.SetActive(false);
+        UpdateCoinsUI();
+        UpdateHealthUI();
     }
 
     private void Update() {
@@ -53,6 +58,13 @@ public class UIManager : MonoBehaviour
             isGamePaused = false;
             Time.timeScale = 1f;
         }
+    }
 
+    public void UpdateCoinsUI() {
+        m_CoinsTMP.text = $"Health: {PlayerManager.instance.PlayerCoins}";
+    }
+
+    public void UpdateHealthUI() {
+        m_HealthTMP.text = $"Health: {PlayerManager.instance.PlayerHealth}";
     }
 }
