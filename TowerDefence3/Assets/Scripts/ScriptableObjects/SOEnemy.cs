@@ -9,7 +9,7 @@ public class SOEnemy : ScriptableObject {
 
     [Header("Info")]
     public int maxHealth;
-    public int damage;
-    public float movementSpeed;
-    public int coins;
+    public int enemyDamage;
+    public float enemyMovementSpeed;
+    public int enemyCoinsWorth;
 }

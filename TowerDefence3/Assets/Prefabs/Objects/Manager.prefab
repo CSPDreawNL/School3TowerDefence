@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c38b1ddf73d5ed48b2ceaa6eaf003d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 5
   coins: 20
 --- !u!114 &4564987583718680018
 MonoBehaviour:

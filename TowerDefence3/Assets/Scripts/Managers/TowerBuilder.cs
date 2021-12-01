@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TD3.Core;
 
 public class TowerBuilder : MonoBehaviour {
     public static TowerBuilder instance;
@@ -35,6 +36,7 @@ public class TowerBuilder : MonoBehaviour {
         if (hasHit) {
             if (hit.collider.tag == "Placable" && PlayerManager.instance.UpdateCoins(-10)) {
                 GameObject tower = Instantiate(m_CurrentTower.towerPrefab, hit.point += m_TowerSpawnOffset, Quaternion.identity, m_TowerList);
+                tower.GetComponent<Tower>().InstantiateSettings(m_CurrentTower);
             }
         }
     }

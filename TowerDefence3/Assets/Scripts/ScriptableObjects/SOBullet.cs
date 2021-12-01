@@ -10,8 +10,5 @@ public class SOBullet : ScriptableObject
 
     [Header("Info")]
     public Sprite bulletSprite;
-    public float bulletSpeed;
-
-
-
+    public int bulletDamage;
 }

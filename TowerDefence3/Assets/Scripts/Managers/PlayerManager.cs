@@ -13,7 +13,7 @@ public class PlayerManager : MonoBehaviour {
             Destroy(this);
     }
 
-    [SerializeField] private int health = 10;
+    [SerializeField] private int health = 5;
     [SerializeField] public int coins = 20;
 
     private void Start() {
@@ -23,8 +23,10 @@ public class PlayerManager : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.GetComponent<Health>()) {
+            //TODO: use enemy dmg
             health--;
             UIManager.instance.UpdateHealthUI(health);
+            Destroy(other.gameObject);
 
             if (health <= 0) {
                 UIManager.instance.GameOver();

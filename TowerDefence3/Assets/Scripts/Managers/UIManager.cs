@@ -36,6 +36,7 @@ public class UIManager : MonoBehaviour {
         m_GameOverPanel.SetActive(false);
         m_YouWonPanel.SetActive(false);
         m_PausePanel.SetActive(false);
+        m_SelectedTowerPanel.color = m_SelectedTowerColor;
     }
 
     private void Update() {
