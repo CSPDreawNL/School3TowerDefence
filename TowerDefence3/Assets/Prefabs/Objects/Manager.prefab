@@ -62,8 +62,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c38b1ddf73d5ed48b2ceaa6eaf003d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 1
-  playerCoins: 50
+  health: 10
+  coins: 20
 --- !u!114 &4564987583718680018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +120,9 @@ MonoBehaviour:
   m_WaveTMP: {fileID: 0}
   m_HealthTMP: {fileID: 0}
   m_CoinsTMP: {fileID: 0}
+  m_SelectedTowerPanel: {fileID: 0}
+  m_SelectedTowerColor: {r: 0.3679245, g: 0.35230508, b: 0.35230508, a: 0.7882353}
+  m_UnselectedTowerColor: {r: 0.48235294, g: 0.4509804, b: 0.4509804, a: 0.53333336}
 --- !u!65 &4126334564739474148
 BoxCollider:
   m_ObjectHideFlags: 0

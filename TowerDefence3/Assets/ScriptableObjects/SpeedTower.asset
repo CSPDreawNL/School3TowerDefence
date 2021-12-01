@@ -9,12 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fed4d333bcc88dc489f7dc175b2e963b, type: 3}
-  m_Name: BasicEnemy
+  m_Script: {fileID: 11500000, guid: 437642f2f40f26342ba5befcb019200c, type: 3}
+  m_Name: SpeedTower
   m_EditorClassIdentifier: 
-  enemyName: BasicEnemy
-  enemyPrefab: {fileID: 3037836982001338249, guid: 9e5df1111b7d08b47a1be37888f892d2, type: 3}
-  maxHealth: 0
-  damage: 0
-  movementSpeed: 1
-  coins: 5
+  towerName: SpeedTower
+  towerPrefab: {fileID: 5763094340589309002, guid: 15dad96f24b672e4898e67a19812770f, type: 3}
+  damage: 1
+  fireRate: 0.7
+  price: 20

@@ -3,6 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TowerBuilder : MonoBehaviour {
+    public static TowerBuilder instance;
+
+    private void Awake() {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
+    }
+
     [SerializeField] private SOTower m_CurrentTower;
 
     [Header("Info")]
@@ -32,5 +41,9 @@ public class TowerBuilder : MonoBehaviour {
 
     private static Ray GetMouseRay() {
         return Camera.main.ScreenPointToRay(Input.mousePosition);
+    }
+
+    public void SelectTower(SOTower _SO) {
+        m_CurrentTower = _SO;
     }
 }

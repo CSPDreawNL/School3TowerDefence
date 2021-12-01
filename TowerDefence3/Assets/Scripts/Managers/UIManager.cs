@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
-{
+public class UIManager : MonoBehaviour {
     public static UIManager instance;
 
     private void Awake() {
@@ -14,13 +14,21 @@ public class UIManager : MonoBehaviour
     }
 
     [SerializeField] private KeyCode m_PauseKey = KeyCode.Escape;
+
+    [Header("Panels")]
     [SerializeField] private GameObject m_GameOverPanel;
     [SerializeField] private GameObject m_YouWonPanel;
     [SerializeField] private GameObject m_PausePanel;
 
+    [Header("TMP")]
     [SerializeField] private TMPro.TextMeshProUGUI m_WaveTMP;
     [SerializeField] private TMPro.TextMeshProUGUI m_HealthTMP;
     [SerializeField] private TMPro.TextMeshProUGUI m_CoinsTMP;
+
+    [Header("TowerSelect")]
+    [SerializeField] private Image m_SelectedTowerPanel;
+    [SerializeField] private Color m_SelectedTowerColor;
+    [SerializeField] private Color m_UnselectedTowerColor;
 
     private bool isGamePaused = false;
 
@@ -59,6 +67,18 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void SelectTower(SOTower _SO) {
+        TowerBuilder.instance.SelectTower(_SO);
+    }
+
+    public void UpdateSelectedTowerUI(Image _selected) {
+        if (m_SelectedTowerPanel) {
+            m_SelectedTowerPanel.color = m_UnselectedTowerColor;
+        }
+            m_SelectedTowerPanel = _selected;
+            m_SelectedTowerPanel.color = m_SelectedTowerColor;
+    }
+
     public void UpdateWaveUI(int _wave) {
         m_WaveTMP.text = $"Wave: {_wave}";
     }
@@ -66,6 +86,7 @@ public class UIManager : MonoBehaviour
     public void UpdateCoinsUI(int _coins) {
         m_CoinsTMP.text = $"Coins: {_coins}";
     }
+
     public void UpdateHealthUI(int _health) {
         m_HealthTMP.text = $"Health: {_health}";
     }

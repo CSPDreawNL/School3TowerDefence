@@ -4,7 +4,6 @@ using UnityEngine;
 using TD3.Core;
 
 public class PlayerManager : MonoBehaviour {
-
     public static PlayerManager instance;
 
     private void Awake() {
