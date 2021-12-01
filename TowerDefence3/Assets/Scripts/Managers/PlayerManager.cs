@@ -14,20 +14,20 @@ public class PlayerManager : MonoBehaviour {
             Destroy(this);
     }
 
-    public int playerHealth = 1;
-    public int playerCoins = 50;
+    [SerializeField] private int health = 10;
+    [SerializeField] public int coins = 20;
 
     private void Start() {
-        UIManager.instance.UpdateHealthUI(playerHealth);
-        UIManager.instance.UpdateCoinsUI(playerCoins);
+        UIManager.instance.UpdateHealthUI(health);
+        UIManager.instance.UpdateCoinsUI(coins);
     }
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.GetComponent<Health>()) {
-            playerHealth--;
-            UIManager.instance.UpdateHealthUI(playerHealth);
+            health--;
+            UIManager.instance.UpdateHealthUI(health);
 
-            if (playerHealth <= 0) {
+            if (health <= 0) {
                 UIManager.instance.GameOver();
             }
         }
@@ -37,18 +37,18 @@ public class PlayerManager : MonoBehaviour {
         bool _return = false;
 
         if (_coins > 0) {
-            playerCoins += _coins;
+            coins += _coins;
             _return  = true;
         }
         else if (_coins < 0) {
-            if (playerCoins + _coins < 0)
+            if (coins + _coins < 0)
                 _return = false;
             else {
-                playerCoins += _coins;
+                coins += _coins;
                 _return = true;
             }
         }
-        UIManager.instance.UpdateCoinsUI(playerCoins);
+        UIManager.instance.UpdateCoinsUI(coins);
         return _return;
     }
 }

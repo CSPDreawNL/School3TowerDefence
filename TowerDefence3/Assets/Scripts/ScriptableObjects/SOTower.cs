@@ -9,8 +9,7 @@ public class SOTower : ScriptableObject {
 
 
     [Header("Info")]
-    public float damage;
+    public int damage;
     public float fireRate;
-    public float reloadSpeed;
     public int price;
 }

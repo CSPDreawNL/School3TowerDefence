@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fed4d333bcc88dc489f7dc175b2e963b, type: 3}
-  m_Name: BasicEnemy
+  m_Name: TankEnemy
   m_EditorClassIdentifier: 
-  enemyName: BasicEnemy
+  enemyName: TankEnemy
   enemyPrefab: {fileID: 0}
-  maxHealth: 2
-  movementSpeed: 1
-  coins: 5
+  maxHealth: 5
+  movementSpeed: 0.5
+  coins: 15

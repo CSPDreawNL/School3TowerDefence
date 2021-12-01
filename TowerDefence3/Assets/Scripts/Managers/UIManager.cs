@@ -64,7 +64,7 @@ public class UIManager : MonoBehaviour
     }
 
     public void UpdateCoinsUI(int _coins) {
-        m_CoinsTMP.text = $"Health: {_coins}";
+        m_CoinsTMP.text = $"Coins: {_coins}";
     }
     public void UpdateHealthUI(int _health) {
         m_HealthTMP.text = $"Health: {_health}";

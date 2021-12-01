@@ -8,7 +8,8 @@ public class SOEnemy : ScriptableObject {
     public GameObject enemyPrefab;
 
     [Header("Info")]
-    public float maxHealth;
+    public int maxHealth;
+    public int damage;
     public float movementSpeed;
     public int coins;
 }
