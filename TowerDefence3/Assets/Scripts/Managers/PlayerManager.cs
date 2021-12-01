@@ -14,15 +14,20 @@ public class PlayerManager : MonoBehaviour {
             Destroy(this);
     }
 
-    public int PlayerHealth = 1;
-    public int PlayerCoins = 50;
+    public int playerHealth = 1;
+    public int playerCoins = 50;
+
+    private void Start() {
+        UIManager.instance.UpdateHealthUI(playerHealth);
+        UIManager.instance.UpdateCoinsUI(playerCoins);
+    }
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.GetComponent<Health>()) {
-            PlayerHealth--;
-            UIManager.instance.UpdateHealthUI();
+            playerHealth--;
+            UIManager.instance.UpdateHealthUI(playerHealth);
 
-            if (PlayerHealth <= 0) {
+            if (playerHealth <= 0) {
                 UIManager.instance.GameOver();
             }
         }
@@ -32,18 +37,18 @@ public class PlayerManager : MonoBehaviour {
         bool _return = false;
 
         if (_coins > 0) {
-            PlayerCoins += _coins;
+            playerCoins += _coins;
             _return  = true;
         }
         else if (_coins < 0) {
-            if (PlayerCoins + _coins < 0)
+            if (playerCoins + _coins < 0)
                 _return = false;
             else {
-                PlayerCoins += _coins;
+                playerCoins += _coins;
                 _return = true;
             }
         }
-        UIManager.instance.UpdateCoinsUI();
+        UIManager.instance.UpdateCoinsUI(playerCoins);
         return _return;
     }
 }

@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject m_YouWonPanel;
     [SerializeField] private GameObject m_PausePanel;
 
+    [SerializeField] private TMPro.TextMeshProUGUI m_WaveTMP;
     [SerializeField] private TMPro.TextMeshProUGUI m_HealthTMP;
     [SerializeField] private TMPro.TextMeshProUGUI m_CoinsTMP;
 
@@ -27,8 +28,6 @@ public class UIManager : MonoBehaviour
         m_GameOverPanel.SetActive(false);
         m_YouWonPanel.SetActive(false);
         m_PausePanel.SetActive(false);
-        UpdateCoinsUI();
-        UpdateHealthUI();
     }
 
     private void Update() {
@@ -60,11 +59,14 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void UpdateCoinsUI() {
-        m_CoinsTMP.text = $"Health: {PlayerManager.instance.PlayerCoins}";
+    public void UpdateWaveUI(int _wave) {
+        m_WaveTMP.text = $"Wave: {_wave}";
     }
 
-    public void UpdateHealthUI() {
-        m_HealthTMP.text = $"Health: {PlayerManager.instance.PlayerHealth}";
+    public void UpdateCoinsUI(int _coins) {
+        m_CoinsTMP.text = $"Health: {_coins}";
+    }
+    public void UpdateHealthUI(int _health) {
+        m_HealthTMP.text = $"Health: {_health}";
     }
 }
