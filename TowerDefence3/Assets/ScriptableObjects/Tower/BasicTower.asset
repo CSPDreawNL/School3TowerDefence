@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: BasicTower
   towerPrefab: {fileID: 5763094340589309002, guid: b05d3a9e6706a994c8e7344c780aeb8b, type: 3}
-  damage: 2
-  fireRate: 0.5
-  price: 10
+  bullet: {fileID: 11400000, guid: 53818fd66a88402498185af9952714ad, type: 2}
+  towerAttackSpeed: 0.6
+  towerPrice: 10

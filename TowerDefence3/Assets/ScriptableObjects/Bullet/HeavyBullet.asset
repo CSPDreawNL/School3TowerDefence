@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46304da349ae6984eb5a45af888a66a6, type: 3}
   m_Name: HeavyBullet
   m_EditorClassIdentifier: 
-  bulletType: 
-  bulletPrefab: {fileID: 0}
+  bulletType: HeavyBullet
+  bulletPrefab: {fileID: 280049205546236710, guid: 127965e4c6242e64f98cec7831f2bfd5, type: 3}
   bulletSprite: {fileID: 0}
-  bulletDamage: 0
-  bulletSpeed: 0
+  bulletDamage: 5

@@ -32,14 +32,15 @@ public class TowerBuilder : MonoBehaviour {
         RaycastHit hit;
         bool hasHit = Physics.Raycast(GetMouseRay(), out hit, Mathf.Infinity, m_RaycastMask, QueryTriggerInteraction.Ignore);
 
-        //Has hit the surface of an object and has anough money to buy a tower.
+        //Has hit the surface of an object and has enough money to buy a tower.
         if (hasHit) {
-            if (hit.collider.tag == "Placable" && PlayerManager.instance.UpdateCoins(-10)) {
+            if (hit.collider.tag == "Placable" && PlayerManager.instance.UpdateCoins(-m_CurrentTower.towerPrice)) {
                 GameObject tower = Instantiate(m_CurrentTower.towerPrefab, hit.point += m_TowerSpawnOffset, Quaternion.identity, m_TowerList);
                 tower.GetComponent<Tower>().InstantiateSettings(m_CurrentTower);
             }
         }
     }
+    // && PlayerManager.instance.UpdateCoins(-m_CurrentTower.towerPrice)
 
     private static Ray GetMouseRay() {
         return Camera.main.ScreenPointToRay(Input.mousePosition);

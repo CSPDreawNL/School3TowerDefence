@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: HeavyTower
   towerPrefab: {fileID: 5763094340589309002, guid: bf65367d46d84844b969d445295008c4, type: 3}
-  damage: 5
-  fireRate: 0.3
-  price: 30
+  bullet: {fileID: 11400000, guid: 1d955583d3a0e944fafce9880d973b4c, type: 2}
+  towerAttackSpeed: 1
+  towerPrice: 20

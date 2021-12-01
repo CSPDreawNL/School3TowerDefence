@@ -15,5 +15,6 @@ MonoBehaviour:
   enemyName: TankEnemy
   enemyPrefab: {fileID: 0}
   maxHealth: 5
-  movementSpeed: 0.5
-  coins: 15
+  enemyDamage: 2
+  enemyMovementSpeed: 0.5
+  enemyCoinsWorth: 10

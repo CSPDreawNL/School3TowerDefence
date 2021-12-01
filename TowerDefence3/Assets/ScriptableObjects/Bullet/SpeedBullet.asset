@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46304da349ae6984eb5a45af888a66a6, type: 3}
   m_Name: SpeedBullet
   m_EditorClassIdentifier: 
-  bulletType: 
-  bulletPrefab: {fileID: 0}
+  bulletType: SpeedBullet
+  bulletPrefab: {fileID: 280049205546236710, guid: 3f124d68f78015c44a5e78fa64504833, type: 3}
   bulletSprite: {fileID: 0}
-  bulletDamage: 0
-  bulletSpeed: 0
+  bulletDamage: 1

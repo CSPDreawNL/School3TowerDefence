@@ -2,51 +2,52 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace TD3.Core {
-    public class Tower : MonoBehaviour {
+namespace TD3.Core
+{
+    public class Tower : MonoBehaviour
+    {
         [SerializeField] private SOTower m_TowerSettings;
 
         [SerializeField] float timeBetweenAttacks;
         [SerializeField] GameObject projectile;
 
         [SerializeField] Health target;
-        float timeSinceLastAttack = 0;
+        [SerializeField] float timeSinceLastAttack = 0;
 
-        private Coroutine shootingCoroutine;
-
-        private void Awake() {
-            shootingCoroutine = StartCoroutine(Shoot());
+        private void Start()
+        {
+            projectile = m_TowerSettings.bullet.bulletPrefab;
         }
 
-        private void Update() {
+        private void Update()
+        {
             timeSinceLastAttack += Time.deltaTime;
+            if (target && timeSinceLastAttack >= timeBetweenAttacks)
+            {
+                GameObject bullet = Instantiate(projectile, transform.position, transform.rotation);
+                bullet.GetComponent<Bullet>().InstantiateSettings(m_TowerSettings.bullet);
+                projectile.GetComponent<Bullet>().Target = target.transform;
+                timeSinceLastAttack = 0f;
+            }
         }
 
-        private void OnTriggerStay(Collider other) {
-            if (other.GetComponent<Health>()) {
+        private void OnTriggerStay(Collider other)
+        {
+            if (other.GetComponent<Health>())
+            {
                 target = other.GetComponent<Health>();
             }
         }
 
-        private void OnTriggerExit(Collider other) {
-            if (other.GetComponent<Health>() == target) {
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.GetComponent<Health>() == target)
+            {
                 target = null;
             }
         }
-
-        IEnumerator Shoot() {
-            while (gameObject.activeSelf) {
-                while (target == true && timeSinceLastAttack >= timeBetweenAttacks) {
-                    GameObject bullet = Instantiate(projectile, transform.position, transform.rotation);
-
-                    projectile.GetComponent<Bullet>().Target = target.transform;
-                    timeSinceLastAttack = 0f;
-                }
-            }
-            yield return null;
-        }
-
-        public void InstantiateSettings(SOTower _settings) {
+        public void InstantiateSettings(SOTower _settings)
+        {
             m_TowerSettings = _settings;
             timeBetweenAttacks = m_TowerSettings.towerAttackSpeed;
         }
