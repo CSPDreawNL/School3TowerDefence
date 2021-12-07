@@ -6,11 +6,9 @@ using UnityEngine;
 public class SOTower : ScriptableObject {
     public string towerName;
     public GameObject towerPrefab;
-
+    public SOBullet bullet;
 
     [Header("Info")]
-    public float damage;
-    public float fireRate;
-    public float reloadSpeed;
-    public int price;
+    public float towerAttackSpeed;
+    public int towerPrice;
 }

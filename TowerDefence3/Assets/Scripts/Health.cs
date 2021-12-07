@@ -10,6 +10,11 @@ namespace TD3.Core
         [SerializeField] public float maxHealthPoints;
         [SerializeField] public float currentHealthPoints;
 
+        private void Start()
+        {
+            currentHealthPoints = maxHealthPoints;
+        }
+
         bool isDead = false;
 
         public void TakeDamage(float damage)

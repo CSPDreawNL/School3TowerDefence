@@ -1,8 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TD3.Core;
 
 public class TowerBuilder : MonoBehaviour {
+    public static TowerBuilder instance;
+
+    private void Awake() {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
+    }
+
     [SerializeField] private SOTower m_CurrentTower;
 
     [Header("Info")]
@@ -22,15 +32,21 @@ public class TowerBuilder : MonoBehaviour {
         RaycastHit hit;
         bool hasHit = Physics.Raycast(GetMouseRay(), out hit, Mathf.Infinity, m_RaycastMask, QueryTriggerInteraction.Ignore);
 
-        //Has hit the surface of an object and has anough money to buy a tower.
+        //Has hit the surface of an object and has enough money to buy a tower.
         if (hasHit) {
-            if (hit.collider.tag == "Placable" && PlayerManager.instance.UpdateCoins(-10)) {
+            if (hit.collider.tag == "Placable" && PlayerManager.instance.UpdateCoins(-m_CurrentTower.towerPrice)) {
                 GameObject tower = Instantiate(m_CurrentTower.towerPrefab, hit.point += m_TowerSpawnOffset, Quaternion.identity, m_TowerList);
+                tower.GetComponent<Tower>().InstantiateSettings(m_CurrentTower);
             }
         }
     }
+    // && PlayerManager.instance.UpdateCoins(-m_CurrentTower.towerPrice)
 
     private static Ray GetMouseRay() {
         return Camera.main.ScreenPointToRay(Input.mousePosition);
+    }
+
+    public void SelectTower(SOTower _SO) {
+        m_CurrentTower = _SO;
     }
 }

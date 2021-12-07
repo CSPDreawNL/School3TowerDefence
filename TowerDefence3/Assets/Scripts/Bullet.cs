@@ -4,11 +4,13 @@ using UnityEngine;
 
 namespace TD3.Core
 {
-
     public class Bullet : MonoBehaviour
     {
+        [SerializeField] private SOBullet m_BulletSettings;
+
         public Transform Target;
-        public float Speed;
+        public float Speed = 25;
+        public float Damage;
 
         private void FixedUpdate()
         {
@@ -30,11 +32,15 @@ namespace TD3.Core
                 Health _enemyHealth = other.GetComponent<Health>();
                 if (_enemyHealth)
                 {
-                    _enemyHealth.TakeDamage(1);
+                    _enemyHealth.TakeDamage(Damage);
                 }
                 Destroy(gameObject);
             }
         }
-    }
 
+        public void InstantiateSettings(SOBullet _settings) {
+            m_BulletSettings = _settings;
+            Damage = m_BulletSettings.bulletDamage;
+        }
+    }
 }

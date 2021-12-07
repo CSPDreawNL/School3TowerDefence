@@ -25,12 +25,13 @@ public class WaveManager : MonoBehaviour {
     private int enemyCounter = 0;
 
     private void Start() {
+        UIManager.instance.UpdateWaveUI(waveCounter + 1);
+
         waveSpawner = StartCoroutine(WaveSpawner());
     }
 
     IEnumerator WaveSpawner() {
         while (waveCounter != m_Waves.Length) {
-            yield return new WaitForSeconds(m_WaveInterval);
             for (int i = 0; i < m_Waves[waveCounter]; i++) {
                 GameObject enemy = Instantiate(m_Enemy, m_SpawnPosition.position, Quaternion.identity, m_EnemyList);
                 enemy.SetActive(true);
@@ -39,6 +40,10 @@ public class WaveManager : MonoBehaviour {
                 yield return new WaitForSeconds(m_SpawnInterval);
             }
             waveCounter++;
+
+            yield return new WaitForSeconds(m_WaveInterval);
+
+            UIManager.instance.UpdateWaveUI(waveCounter + 1);
         }
         StopCoroutine(waveSpawner);
     }

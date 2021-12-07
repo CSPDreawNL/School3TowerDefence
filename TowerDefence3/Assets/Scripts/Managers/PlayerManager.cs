@@ -4,7 +4,6 @@ using UnityEngine;
 using TD3.Core;
 
 public class PlayerManager : MonoBehaviour {
-
     public static PlayerManager instance;
 
     private void Awake() {
@@ -14,15 +13,22 @@ public class PlayerManager : MonoBehaviour {
             Destroy(this);
     }
 
-    public int PlayerHealth = 1;
-    public int PlayerCoins = 50;
+    [SerializeField] private int health = 5;
+    [SerializeField] public int coins = 20;
+
+    private void Start() {
+        UIManager.instance.UpdateHealthUI(health);
+        UIManager.instance.UpdateCoinsUI(coins);
+    }
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.GetComponent<Health>()) {
-            PlayerHealth--;
-            UIManager.instance.UpdateHealthUI();
+            //TODO: use enemy dmg
+            health--;
+            UIManager.instance.UpdateHealthUI(health);
+            Destroy(other.gameObject);
 
-            if (PlayerHealth <= 0) {
+            if (health <= 0) {
                 UIManager.instance.GameOver();
             }
         }
@@ -32,18 +38,18 @@ public class PlayerManager : MonoBehaviour {
         bool _return = false;
 
         if (_coins > 0) {
-            PlayerCoins += _coins;
+            coins += _coins;
             _return  = true;
         }
         else if (_coins < 0) {
-            if (PlayerCoins + _coins < 0)
+            if (coins + _coins < 0)
                 _return = false;
             else {
-                PlayerCoins += _coins;
+                coins += _coins;
                 _return = true;
             }
         }
-        UIManager.instance.UpdateCoinsUI();
+        UIManager.instance.UpdateCoinsUI(coins);
         return _return;
     }
 }
