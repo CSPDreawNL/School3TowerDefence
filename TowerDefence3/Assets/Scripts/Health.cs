@@ -9,10 +9,12 @@ namespace TD3.Core
     {
         [SerializeField] public float maxHealthPoints;
         [SerializeField] public float currentHealthPoints;
+        [SerializeField] TextMeshProUGUI healthUI;
 
         private void Start()
         {
             currentHealthPoints = maxHealthPoints;
+            UpdateHealth();
         }
 
         bool isDead = false;
@@ -26,6 +28,16 @@ namespace TD3.Core
                 PlayerManager.instance.UpdateCoins(5);
                 WaveManager.instance.EnemyDied();
                 Destroy(gameObject);
+            }
+
+            UpdateHealth();
+        }
+
+        private void UpdateHealth()
+        {
+            if (healthUI)
+            {
+                healthUI.text = currentHealthPoints.ToString();
             }
         }
     }
