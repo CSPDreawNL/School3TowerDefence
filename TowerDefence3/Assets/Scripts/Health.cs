@@ -26,7 +26,7 @@ namespace TD3.Core
             if (currentHealthPoints == 0f && isDead == false)
             {
                 PlayerManager.instance.UpdateCoins(5);
-                WaveManager.instance.EnemyDied();
+                EventManager.instance.EnemyDied();
                 Destroy(gameObject);
             }
 
