@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1936845740883729469}
   m_Layer: 0
   m_Name: Tower 2
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,10 +128,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64b00e1a74113f4da05a9b760a7e256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponRange: 5
+  m_TowerSettings: {fileID: 0}
   timeBetweenAttacks: 3
   projectile: {fileID: 280049205546236710, guid: 127965e4c6242e64f98cec7831f2bfd5, type: 3}
   target: {fileID: 0}
+  timeSinceLastAttack: 0
 --- !u!65 &1936845740883729469
 BoxCollider:
   m_ObjectHideFlags: 0

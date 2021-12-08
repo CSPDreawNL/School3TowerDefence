@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4564987583718680013}
   - component: {fileID: 5716129956857227075}
   - component: {fileID: 296538788372796631}
-  - component: {fileID: 4564987583718680018}
   - component: {fileID: 4163681077485561745}
   - component: {fileID: 4430742157919452964}
   - component: {fileID: 4126334564739474148}
@@ -64,25 +63,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   coins: 20
---- !u!114 &4564987583718680018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4564987583718680019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9aa7e72e47da5444b54f71d16257c86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   m_CurrentTower: {fileID: 11400000, guid: ed1e37ceea65cfa4e9406ac75720eac1, type: 2}
-  m_PlaceTowerKey: 323
+  m_TowerList: {fileID: 0}
+  m_TowerSpawnOffset: {x: 0, y: 1, z: 0}
+  m_InteractKey: 323
   m_RaycastMask:
     serializedVersion: 2
     m_Bits: 2147483647
-  m_TowerList: {fileID: 0}
-  m_TowerSpawnOffset: {x: 0, y: 1, z: 0}
 --- !u!114 &4163681077485561745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,10 +84,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Enemy: {fileID: 0}
   m_EnemyList: {fileID: 0}
-  m_SpawnPosition: {fileID: 0}
+  m_EnemySpawnPosition: {fileID: 0}
+  m_Lazer: {fileID: 0}
+  m_LazerSpawnPosition: {fileID: 0}
   m_Waves: 0100000003000000050000000700000009000000
   m_SpawnInterval: 1
   m_WaveInterval: 5
+  m_EventTimes: {x: 20, y: 40}
 --- !u!114 &4430742157919452964
 MonoBehaviour:
   m_ObjectHideFlags: 0

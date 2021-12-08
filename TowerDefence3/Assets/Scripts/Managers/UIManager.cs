@@ -69,7 +69,7 @@ public class UIManager : MonoBehaviour {
     }
 
     public void SelectTower(SOTower _SO) {
-        TowerBuilder.instance.SelectTower(_SO);
+        PlayerManager.instance.SelectTower(_SO);
     }
 
     public void UpdateSelectedTowerUI(Image _selected) {

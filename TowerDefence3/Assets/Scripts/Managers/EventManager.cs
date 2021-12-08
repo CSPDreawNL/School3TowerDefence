@@ -21,11 +21,10 @@ public class EventManager : MonoBehaviour {
     [SerializeField] private int[] m_Waves;
     [SerializeField] private int m_SpawnInterval = 1;
     [SerializeField] private int m_WaveInterval = 5;
-    [SerializeField] private Vector2 m_EventTimes = new Vector2(60, 120);
+    [SerializeField] private Vector2 m_EventTimes;
 
     private Coroutine waveSpawner;
     private Coroutine eventSpawner;
-    private GameObject lazerTarget;
     private int waveCounter = 0;
     private int enemyCounter = 0;
 
@@ -37,7 +36,7 @@ public class EventManager : MonoBehaviour {
     }
 
     IEnumerator WaveSpawner() {
-        while (waveCounter != m_Waves.Length) {
+        while (IsGameRunning()) {
             yield return new WaitForSeconds(m_WaveInterval);
 
             for (int i = 0; i < m_Waves[waveCounter]; i++) {
@@ -50,23 +49,38 @@ public class EventManager : MonoBehaviour {
             waveCounter++;
             UIManager.instance.UpdateWaveUI(waveCounter + 1);
         }
-        StopCoroutine(waveSpawner);
     }
 
     IEnumerator EventSpawner() {
-        while (waveCounter != m_Waves.Length) {
+        while (IsGameRunning()) {
+            //Wait a random amount of time before continuing.
             int randomTime = (int)Random.Range(m_EventTimes.x, m_EventTimes.y);
-
             yield return new WaitForSeconds(randomTime);
 
+            //Get all towers in the scene and put them in a array.
             GameObject[] allTowers = GameObject.FindGameObjectsWithTag("Tower");
-            int randomTower = Random.Range(0, allTowers.Length);
 
+            //Set a random target.
+            int randomTower = Random.Range(0, allTowers.Length);
+            GameObject lazerTarget = null;
             for (int i = 0; i < allTowers.Length; i++) {
                 lazerTarget = allTowers[randomTower].gameObject;
             }
+
+            //Spawn the lazer ship and set the target.
+            if (lazerTarget != null) {
+                GameObject lazer = Instantiate(m_Lazer, m_LazerSpawnPosition.position, m_LazerSpawnPosition.rotation);
+                lazer.GetComponent<Steering.SimpleBrain>().followPathPoints = new List<GameObject>() {lazerTarget};
+            }
         }
-        StopCoroutine(eventSpawner);
+    }
+
+    /// <summary>
+    /// Check if the game is running and there are currently waves spawning.
+    /// </summary>
+    /// <returns>Returns true if all conditions are met</returns>
+    private bool IsGameRunning() {
+        return (Application.isPlaying && waveCounter != m_Waves.Length) ? true : false;
     }
 
     public void EnemyDied() {
@@ -75,5 +89,10 @@ public class EventManager : MonoBehaviour {
             StopCoroutine(waveSpawner);
             UIManager.instance.YouWon();
         }
+    }
+
+    private void OnApplicationQuit() {
+        StopCoroutine(eventSpawner);
+        StopCoroutine(waveSpawner);
     }
 }
