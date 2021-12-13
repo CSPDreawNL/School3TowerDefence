@@ -36,6 +36,7 @@ namespace TD3.Core
             if (other.GetComponent<Health>())
             {
                 target = other.GetComponent<Health>();
+                transform.LookAt(target.transform);
             }
         }
 

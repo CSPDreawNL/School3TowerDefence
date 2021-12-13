@@ -7300,6 +7300,10 @@ PrefabInstance:
       propertyPath: m_SpawnPosition
       value: 
       objectReference: {fileID: 135834994}
+    - target: {fileID: 4163681077485561745, guid: 30110cc0d01af3f49a4330fa7cf5e0e6, type: 3}
+      propertyPath: m_EnemySpawnPosition
+      value: 
+      objectReference: {fileID: 135834994}
     - target: {fileID: 4430742157919452964, guid: 30110cc0d01af3f49a4330fa7cf5e0e6, type: 3}
       propertyPath: m_WaveTMP
       value: 
