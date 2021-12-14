@@ -7,7 +7,7 @@ TagManager:
   - Placable
   - Unplacable
   - Tower
-  - Lazer
+  - Laser
   layers:
   - Default
   - TransparentFX

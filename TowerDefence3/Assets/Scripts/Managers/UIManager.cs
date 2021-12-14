@@ -80,8 +80,8 @@ public class UIManager : MonoBehaviour {
             m_SelectedTowerPanel.color = m_SelectedTowerColor;
     }
 
-    public void UpdateWaveUI(int _wave) {
-        m_WaveTMP.text = $"Wave: {_wave}";
+    public void UpdateWaveUI(int _currentWave, int _maxWaves) {
+        m_WaveTMP.text = $"Wave: {_currentWave}/{_maxWaves}";
     }
 
     public void UpdateCoinsUI(int _coins) {

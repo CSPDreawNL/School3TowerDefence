@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SpeedTower
   m_EditorClassIdentifier: 
   towerName: SpeedTower
-  towerPrefab: {fileID: 374349527207562829, guid: 5c6dae0bb7853cf4187dcadd2fd50ced, type: 3}
+  towerPrefab: {fileID: 3303883521017962282, guid: 1545bb653aeabd741b8615fe96e016d7, type: 3}
   bullet: {fileID: 11400000, guid: d868823b4ccbbce4e8118024878eee7a, type: 2}
   towerAttackSpeed: 0.3
   towerPrice: 15

@@ -305,7 +305,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913431719089676063}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.005282427, y: 0, z: -0.00546074}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2243,8 +2243,8 @@ GameObject:
   - component: {fileID: 7189041580457717772}
   - component: {fileID: 7189041580457717773}
   m_Layer: 0
-  m_Name: LazerShip
-  m_TagString: Lazer
+  m_Name: LaserShip
+  m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2256,7 +2256,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7189041580457717761}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 30.000654, y: 10, z: 0.00902354}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2277,6 +2277,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 781263c34bb3e7b438b92b1caaa82f37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laserCountdown: 2
+  laserDestructionTimer: 1
+  targetDetectDistance: 1
 --- !u!114 &7189041580457717763
 MonoBehaviour:
   m_ObjectHideFlags: 0
