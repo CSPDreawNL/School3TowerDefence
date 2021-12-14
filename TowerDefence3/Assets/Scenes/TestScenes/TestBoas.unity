@@ -366,11 +366,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e168afe080a2b64aba4d7e37cb83f89, type: 3}
---- !u!4 &93932176 stripped
+--- !u!4 &93932176
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 8287601469878183084, guid: 3e168afe080a2b64aba4d7e37cb83f89, type: 3}
   m_PrefabInstance: {fileID: 93932175}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507499368}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -18.64, y: 0.809, z: -9.26}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1983524579}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &99159440
 GameObject:
   m_ObjectHideFlags: 0
@@ -2043,6 +2053,89 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7981919428680167245, guid: 8f41b609cb860ff4fbced7f20e401282, type: 3}
   m_PrefabInstance: {fileID: 499715671}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &507499368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 8667363352125144598, guid: 3e168afe080a2b64aba4d7e37cb83f89, type: 3}
+  m_PrefabInstance: {fileID: 93932175}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 93932176}
+  - component: {fileID: 507499371}
+  - component: {fileID: 507499370}
+  - component: {fileID: 507499369}
+  m_Layer: 0
+  m_Name: Truck
+  m_TagString: Unplacable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &507499369
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: -8395199586341257784, guid: 3e168afe080a2b64aba4d7e37cb83f89, type: 3}
+  m_PrefabInstance: {fileID: 93932175}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507499368}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5942086413982268935, guid: dc5bae2eec1ce774a98332247a5300b1, type: 3}
+--- !u!23 &507499370
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 7154062000082378691, guid: 3e168afe080a2b64aba4d7e37cb83f89, type: 3}
+  m_PrefabInstance: {fileID: 93932175}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507499368}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 60109039312e4e048abc2be669db5551, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &507499371
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4948508442615032585, guid: 3e168afe080a2b64aba4d7e37cb83f89, type: 3}
+  m_PrefabInstance: {fileID: 93932175}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507499368}
+  m_Mesh: {fileID: 5942086413982268935, guid: dc5bae2eec1ce774a98332247a5300b1, type: 3}
 --- !u!1001 &514873711
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6983,9 +7076,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2617028}
     - target: {fileID: 4163681077485561745, guid: 30110cc0d01af3f49a4330fa7cf5e0e6, type: 3}
+      propertyPath: m_Waves.enemyParent
+      value: 
+      objectReference: {fileID: 796813375}
+    - target: {fileID: 4163681077485561745, guid: 30110cc0d01af3f49a4330fa7cf5e0e6, type: 3}
       propertyPath: m_EnemySpawnPosition
       value: 
       objectReference: {fileID: 2617028}
+    - target: {fileID: 4163681077485561745, guid: 30110cc0d01af3f49a4330fa7cf5e0e6, type: 3}
+      propertyPath: m_LaserSpawnPosition
+      value: 
+      objectReference: {fileID: 82341007}
     - target: {fileID: 4163681077485561745, guid: 30110cc0d01af3f49a4330fa7cf5e0e6, type: 3}
       propertyPath: m_LazerSpawnPosition
       value: 
@@ -6994,6 +7095,34 @@ PrefabInstance:
       propertyPath: m_laserSpawnPosition
       value: 
       objectReference: {fileID: 82341007}
+    - target: {fileID: 4163681077485561745, guid: 30110cc0d01af3f49a4330fa7cf5e0e6, type: 3}
+      propertyPath: wavesstruct.totalWaves
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163681077485561745, guid: 30110cc0d01af3f49a4330fa7cf5e0e6, type: 3}
+      propertyPath: m_Waves.enemySpawnPosition
+      value: 
+      objectReference: {fileID: 2617028}
+    - target: {fileID: 4163681077485561745, guid: 30110cc0d01af3f49a4330fa7cf5e0e6, type: 3}
+      propertyPath: wavesstruct.enemywre.spawnChance
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163681077485561745, guid: 30110cc0d01af3f49a4330fa7cf5e0e6, type: 3}
+      propertyPath: wavesstruct.enemiesInWaves.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163681077485561745, guid: 30110cc0d01af3f49a4330fa7cf5e0e6, type: 3}
+      propertyPath: m_Waves.enemiesInWaves.Array.data[3].startWave
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163681077485561745, guid: 30110cc0d01af3f49a4330fa7cf5e0e6, type: 3}
+      propertyPath: m_Waves.enemiesInWaves.Array.data[3].enemyPrefab
+      value: 
+      objectReference: {fileID: 3037836982001338249, guid: 9e5df1111b7d08b47a1be37888f892d2, type: 3}
+    - target: {fileID: 4163681077485561745, guid: 30110cc0d01af3f49a4330fa7cf5e0e6, type: 3}
+      propertyPath: m_Waves.enemiesInWaves.Array.data[3].spawnChance
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4430742157919452964, guid: 30110cc0d01af3f49a4330fa7cf5e0e6, type: 3}
       propertyPath: m_WaveTMP
       value: 

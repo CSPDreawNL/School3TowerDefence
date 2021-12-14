@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BasicEnemy
   m_EditorClassIdentifier: 
   enemyName: BasicEnemy
-  enemyPrefab: {fileID: 3037836982001338249, guid: 9e5df1111b7d08b47a1be37888f892d2, type: 3}
+  enemyPrefab: {fileID: 3037836982001338249, guid: 1d25d84878b6adf4088c7399ac8da4a9, type: 3}
   maxHealth: 2
   enemyDamage: 1
   enemyMovementSpeed: 1

@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 3673126131819636247}
   m_Layer: 0
   m_Name: chicken
-  m_TagString: Tower
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -352,8 +352,8 @@ GameObject:
   - component: {fileID: 4071874561980380571}
   - component: {fileID: 2150353075387258402}
   m_Layer: 0
-  m_Name: Chicken
-  m_TagString: Untagged
+  m_Name: chicken
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
