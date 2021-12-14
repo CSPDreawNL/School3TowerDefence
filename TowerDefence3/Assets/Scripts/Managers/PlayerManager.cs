@@ -60,7 +60,7 @@ public class PlayerManager : MonoBehaviour {
                 GameObject tower = Instantiate(m_CurrentTower.towerPrefab, hit.point += m_TowerSpawnOffset, Quaternion.identity, m_TowerList);
                 tower.GetComponent<Tower>().InstantiateSettings(m_CurrentTower);
             }
-            else if (hit.collider.tag == "Lazer") {
+            else if (hit.collider.tag == "Laser") {
                 Destroy(hit.collider.gameObject);
             }
         }

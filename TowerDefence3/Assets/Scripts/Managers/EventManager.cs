@@ -16,8 +16,8 @@ public class EventManager : MonoBehaviour {
     [SerializeField] private GameObject m_Enemy;
     [SerializeField] private Transform m_EnemyList;
     [SerializeField] private Transform m_EnemySpawnPosition;
-    [SerializeField] private GameObject m_Lazer;
-    [SerializeField] private Transform m_LazerSpawnPosition;
+    [SerializeField] private GameObject m_laser;
+    [SerializeField] private Transform m_laserSpawnPosition;
     [SerializeField] private int[] m_Waves;
     [SerializeField] private int m_SpawnInterval = 1;
     [SerializeField] private int m_WaveInterval = 5;
@@ -29,7 +29,7 @@ public class EventManager : MonoBehaviour {
     private int enemyCounter = 0;
 
     private void Start() {
-        UIManager.instance.UpdateWaveUI(waveCounter + 1);
+        UIManager.instance.UpdateWaveUI(waveCounter, m_Waves.Length);
 
         waveSpawner = StartCoroutine(WaveSpawner());
         eventSpawner = StartCoroutine(EventSpawner());
@@ -47,7 +47,7 @@ public class EventManager : MonoBehaviour {
                 yield return new WaitForSeconds(m_SpawnInterval);
             }
             waveCounter++;
-            UIManager.instance.UpdateWaveUI(waveCounter + 1);
+            UIManager.instance.UpdateWaveUI(waveCounter, m_Waves.Length);
         }
     }
 
@@ -62,15 +62,16 @@ public class EventManager : MonoBehaviour {
 
             //Set a random target.
             int randomTower = Random.Range(0, allTowers.Length);
-            GameObject lazerTarget = null;
+            GameObject laserTarget = null;
             for (int i = 0; i < allTowers.Length; i++) {
-                lazerTarget = allTowers[randomTower].gameObject;
+                laserTarget = allTowers[randomTower].gameObject;
             }
 
-            //Spawn the lazer ship and set the target.
-            if (lazerTarget != null) {
-                GameObject lazer = Instantiate(m_Lazer, m_LazerSpawnPosition.position, m_LazerSpawnPosition.rotation);
-                lazer.GetComponent<Steering.SimpleBrain>().followPathPoints = new List<GameObject>() {lazerTarget};
+            //Spawn the laser ship and set the target.
+            if (laserTarget != null) {
+                GameObject laser = Instantiate(m_laser, m_laserSpawnPosition.position, m_laserSpawnPosition.rotation);
+                laser.GetComponent<Steering.SimpleBrain>().followPathPoints = new List<GameObject>() {laserTarget};
+                laser.GetComponent<LaserEvent>().InstantiateLaser(laserTarget);
             }
         }
     }
