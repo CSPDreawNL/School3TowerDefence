@@ -7,13 +7,11 @@ namespace TD3.Core
 {
     public class Health : MonoBehaviour
     {
-        [SerializeField] public float maxHealthPoints;
         [SerializeField] public float currentHealthPoints;
         [SerializeField] TextMeshProUGUI healthUI;
 
         private void Start()
         {
-            currentHealthPoints = maxHealthPoints;
             UpdateHealth();
         }
 
