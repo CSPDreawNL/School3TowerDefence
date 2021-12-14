@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: LazerSteering Settings
   m_EditorClassIdentifier: 
   m_mass: 70
-  m_maxDesiredVelocity: 30
-  m_maxSteeringForce: 30
-  m_maxSpeed: 3
+  m_maxDesiredVelocity: 40
+  m_maxSteeringForce: 40
+  m_maxSpeed: 6
   LoopPath: 0
   m_followPathMode: 0
   loopPath: 0
