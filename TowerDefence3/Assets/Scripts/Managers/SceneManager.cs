@@ -18,7 +18,6 @@ public class SceneManager : MonoBehaviour
     /// </summary>
     public void ReloadScene() {
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
-        Time.timeScale = 1f;
     }
 
     /// <summary>

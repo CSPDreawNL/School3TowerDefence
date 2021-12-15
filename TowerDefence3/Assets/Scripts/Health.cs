@@ -21,10 +21,8 @@ namespace TD3.Core
         {
             currentHealthPoints = Mathf.Max(currentHealthPoints - damage, 0f);
 
-            if (currentHealthPoints == 0f && isDead == false)
-            {
+            if (currentHealthPoints == 0f && isDead == false) {
                 PlayerManager.instance.UpdateCoins(5);
-                EventManager.instance.EnemyDied();
                 Destroy(gameObject);
             }
 
@@ -37,6 +35,10 @@ namespace TD3.Core
             {
                 healthUI.text = currentHealthPoints.ToString();
             }
+        }
+
+        private void OnDestroy() {
+            EventManager.instance.EnemyDied();
         }
     }
 }

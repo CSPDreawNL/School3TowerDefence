@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  coins: 20
+  coins: 10
   m_CurrentTower: {fileID: 11400000, guid: ed1e37ceea65cfa4e9406ac75720eac1, type: 2}
   m_TowerList: {fileID: 0}
   m_TowerSpawnOffset: {x: 0, y: 1, z: 0}
@@ -102,6 +102,8 @@ MonoBehaviour:
   m_LaserPrefab: {fileID: 7189041580457717761, guid: d8f847c999bdfcd4f813c715f8eafe2e, type: 3}
   m_LaserSpawnPosition: {fileID: 0}
   m_EventTimes: {x: 20, y: 30}
+  waveCounter: 0
+  enemyCounter: 0
 --- !u!114 &4430742157919452964
 MonoBehaviour:
   m_ObjectHideFlags: 0

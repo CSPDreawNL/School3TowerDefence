@@ -27,6 +27,8 @@ public class EventManager : MonoBehaviour {
     public int enemyCounter = 0;
 
     private void Start() {
+        Time.timeScale = 1f;
+
         waveCounter++;
         UIManager.instance.UpdateWaveUI(waveCounter, m_Waves.wavePatern.Length);
 
