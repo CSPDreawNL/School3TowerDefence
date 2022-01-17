@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour {
     [SerializeField] private Color m_SelectedTowerColor;
     [SerializeField] private Color m_UnselectedTowerColor;
 
-    private bool isGamePaused = false;
+    public bool isGamePaused = false;
 
     private void Start() {
         m_GameOverPanel.SetActive(false);

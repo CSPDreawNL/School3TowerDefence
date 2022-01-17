@@ -55,7 +55,7 @@ public class PlayerManager : MonoBehaviour {
         bool hasHit = Physics.Raycast(GetMouseRay(), out hit, Mathf.Infinity, m_RaycastMask, QueryTriggerInteraction.Ignore);
 
         //Has hit the surface of an object and has enough money to buy a tower.
-        if (hasHit) {
+        if (hasHit && !UIManager.instance.isGamePaused) {
             if (hit.collider.tag == "Placable" && instance.UpdateCoins(-m_CurrentTower.towerPrice)) {
                 GameObject tower = Instantiate(m_CurrentTower.towerPrefab, hit.point += m_TowerSpawnOffset, Quaternion.identity, m_TowerList);
                 tower.GetComponent<Tower>().InstantiateSettings(m_CurrentTower);

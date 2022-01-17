@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 6681050617995133732}
   - component: {fileID: 957166384949027432}
   - component: {fileID: 5123698029666878801}
+  - component: {fileID: 6085406328435990108}
   m_Layer: 0
   m_Name: polySurface5
   m_TagString: Untagged
@@ -275,6 +276,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6085406328435990108
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6801040908389534292}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4545423930167495100, guid: c60a4227fc022a0469b0332a4235962e, type: 3}
 --- !u!1 &6856710057533103487
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,7 +425,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7352665743019583766}
-  - component: {fileID: -2333008181104987891}
   m_Layer: 0
   m_Name: Fence3
   m_TagString: Unplacable
@@ -436,20 +450,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &-2333008181104987891
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7872919029695771564}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &8457747692705265886
 GameObject:
   m_ObjectHideFlags: 0
